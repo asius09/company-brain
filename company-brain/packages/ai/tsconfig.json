@@ -1,0 +1,4 @@
+{
+  "extends": "@company-brain/tsconfig/node.json",
+  "include": ["src/**/*.ts"]
+}

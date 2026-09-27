@@ -1,0 +1,34 @@
+{
+  "name": "@company-brain/api",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "start": "tsx src/index.ts",
+    "lint": "eslint src",
+    "typecheck": "tsc --noEmit",
+    "verify": "tsx scripts/verify.ts"
+  },
+  "dependencies": {
+    "@company-brain/ai": "workspace:*",
+    "@company-brain/auth": "workspace:*",
+    "@company-brain/core": "workspace:*",
+    "@company-brain/db": "workspace:*",
+    "@company-brain/ingest": "workspace:*",
+    "@company-brain/queue": "workspace:*",
+    "@hono/node-server": "^2.1.1",
+    "@hono/zod-openapi": "^1.6.3",
+    "ai": "^7.0.116",
+    "drizzle-orm": "^0.45.3",
+    "hono": "^4.13.9",
+    "postgres": "^3.4.9",
+    "zod": "^4.6.5"
+  },
+  "devDependencies": {
+    "@company-brain/tsconfig": "workspace:*",
+    "@types/node": "^24.0.0",
+    "tsx": "^4.23.15",
+    "typescript": "^5.9.0"
+  }
+}

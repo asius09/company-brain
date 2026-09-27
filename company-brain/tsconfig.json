@@ -1,0 +1,21 @@
+{
+  "extends": "./packages/tsconfig/library.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@company-brain/db": ["./packages/db/src/index.ts"],
+      "@company-brain/db/*": ["./packages/db/src/*"],
+      "@company-brain/core": ["./packages/core/src/index.ts"],
+      "@company-brain/core/*": ["./packages/core/src/*"],
+      "@company-brain/ai": ["./packages/ai/src/index.ts"],
+      "@company-brain/ai/*": ["./packages/ai/src/*"],
+      "@company-brain/ingest": ["./packages/ingest/src/index.ts"],
+      "@company-brain/ingest/*": ["./packages/ingest/src/*"],
+      "@company-brain/queue": ["./packages/queue/src/index.ts"],
+      "@company-brain/queue/*": ["./packages/queue/src/*"],
+      "@company-brain/auth": ["./packages/auth/src/index.ts"],
+      "@company-brain/auth/*": ["./packages/auth/src/*"]
+    }
+  },
+  "exclude": ["node_modules", "dist", ".next"]
+}

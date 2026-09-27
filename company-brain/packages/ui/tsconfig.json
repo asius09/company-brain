@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "display": "Company Brain Shared UI",
+  "extends": "@company-brain/tsconfig/react.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    // The shared `react.json` pulls in `vite/client` for the Vite app. This
+    // package is a component library, not an app, so it must not depend on Vite.
+    "types": [],
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  },
+  "include": ["src/**/*.ts", "src/**/*.tsx"]
+}

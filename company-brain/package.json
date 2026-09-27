@@ -1,0 +1,52 @@
+{
+  "name": "company-brain",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Multi-tenant AI knowledge platform that turns company documents, websites, GitHub repos and connected knowledge sources into a searchable company brain.",
+  "packageManager": "pnpm@11.24.0",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "lint": "turbo run lint",
+    "typecheck": "turbo run typecheck",
+    "test": "turbo run test",
+    "format": "prettier --write \"**/*.{ts,tsx,md,json}\"",
+    "format:check": "prettier --check \"**/*.{ts,tsx,md,json}\"",
+    "db:generate": "pnpm --filter @company-brain/db generate",
+    "db:migrate": "pnpm --filter @company-brain/db migrate",
+    "db:push": "pnpm --filter @company-brain/db push",
+    "db:studio": "pnpm --filter @company-brain/db studio",
+    "db:seed": "pnpm --filter @company-brain/db seed",
+    "db:reset": "pnpm --filter @company-brain/db reset",
+    "verify:auth": "pnpm --filter @company-brain/auth verify",
+    "verify:queue": "pnpm --filter @company-brain/queue verify",
+    "verify": "pnpm run typecheck && pnpm run verify:auth && pnpm run verify:queue && pnpm run verify:ingest && pnpm run verify:ai && pnpm run verify:worker && pnpm run verify:api",
+    "worker": "pnpm --filter @company-brain/worker dev",
+    "verify:ingest": "pnpm --filter @company-brain/ingest verify",
+    "verify:ai": "pnpm --filter @company-brain/ai verify",
+    "verify:worker": "pnpm --filter @company-brain/worker verify",
+    "verify:api": "pnpm --filter @company-brain/api verify"
+  },
+  "devDependencies": {
+    "@company-brain/tsconfig": "workspace:*",
+    "@types/node": "^24.0.0",
+    "eslint": "^9.30.0",
+    "prettier": "^3.6.0",
+    "prettier-plugin-tailwindcss": "^0.6.14",
+    "turbo": "^2.5.0",
+    "typescript": "^5.9.0",
+    "vitest": "^3.2.0"
+  },
+  "prettier": {
+    "singleQuote": true,
+    "semi": true,
+    "trailingComma": "all",
+    "printWidth": 100,
+    "plugins": [
+      "prettier-plugin-tailwindcss"
+    ]
+  }
+}
